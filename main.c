@@ -290,7 +290,16 @@ Nave novaNave()
   Nave nave;
 
   nave.tipo = randomNum(1, 10);
-  nave.prioridade = randomNum(0, 100);
+
+  int probabilidade = randomNum(1, 10);
+
+  if (probabilidade == 1) {
+
+    nave.prioridade = randomNum(0, 100);
+    printf("Foi detectado um passageiro doente ou clandestino, trocando prioridade.\n");
+  } else {
+    nave.prioridade = randomNum(0, 100);
+  }
 
   printf("Digite o número de passageiros: ");
   scanf("%d", &nave.numPassageiros);
@@ -306,12 +315,13 @@ Nave novaNave()
 
   for (int i = 0; i < nave.numRecursos; i++)
   {
-    printf("\nPassageiro #%d\n", i + 1);
+    printf("\nRecurso #%d\n", i + 1);
     nave.recursos[i] = novoRecurso();
   }
 
   return nave;
 }
+
 
 Passageiro novoPassageiro()
 {
