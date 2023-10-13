@@ -120,7 +120,7 @@ char **split(const char *str, char separator, int *count)
   {
     if (str[i] == separator || i == strLength)
     {
-      endIndex = i; 
+      endIndex = i;
       numTokens++;
       startIndex = endIndex + 1;
     }
@@ -290,15 +290,13 @@ Nave novaNave()
   Nave nave;
 
   nave.tipo = randomNum(1, 10);
-
+  nave.prioridade = randomNum(0, 100);
   int probabilidade = randomNum(1, 10);
 
-  if (probabilidade == 1) {
-
+  if (probabilidade == 1)
+  {
     nave.prioridade = randomNum(0, 100);
     printf("Foi detectado um passageiro doente ou clandestino, trocando prioridade.\n");
-  } else {
-    nave.prioridade = randomNum(0, 100);
   }
 
   printf("Digite o número de passageiros: ");
@@ -321,7 +319,6 @@ Nave novaNave()
 
   return nave;
 }
-
 
 Passageiro novoPassageiro()
 {
